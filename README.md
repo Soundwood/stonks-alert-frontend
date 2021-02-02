@@ -1,6 +1,19 @@
-# Getting Started with Create React App
+# To-Do
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Potential Additional Integrations
+
+* StockTwits
+* WSJ
+* Seeking Alpha
+* Google Finance
+* Google Trends
+* Reddit
+** wallstreetbets
+** cryptocurrency
+** daytrading
+** wallstreet
+** investing
+
 
 ## Available Scripts
 
