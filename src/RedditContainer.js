@@ -8,7 +8,8 @@ export default class RedditContainer extends Component {
         }
     }
     render() {
-        const RedditRows = (this.props.reddit_data) ? this.props.reddit_data.map(stock => <RedditStockCard stock={stock}/>) : "No Reddit Data"
+        const RedditRows = (this.props.reddit_data) ? this.props.reddit_data.map(stock => <RedditStockCard stock={stock}/>) : 
+            <tr><th>No Reddit Data</th></tr>
         return (
             <div className="row">
                 <canvas className="my-4 chartjs-render-monitor" id="myChart" width="1972" height="832" style={{display: "block", height: "416px", width: "986px"}}></canvas>

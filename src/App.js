@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import RedditContainer from './RedditContainer'
+import { Switch, Route } from 'react-router-dom'
 import Header from './Header'
+import Home from './Home'
 import Footer from './Footer'
-import StocktwitContainer from './StocktwitContainer'
+import About from './About'
+import Inquire from './Inquire'
 
 export default class App extends Component {
     constructor() {
@@ -16,10 +18,11 @@ export default class App extends Component {
         return (
             <>
                 <Header />
-                <main role="main" className="container">
-                    <RedditContainer reddit_data={this.reddit_data}/>
-                    <StocktwitContainer stocktwit_data={this.reddit_data}/>
-                </main>
+                    <Switch>
+                        <Route exact path='/' render={ () => <Home reddit_data={this.reddit_data} stocktwit_data={this.reddit_data}/>} />
+                        <Route exact path='about' component={About} />
+                        <Route exact path='inquire' component={Inquire} />
+                    </Switch>
                 <Footer />
             </>
         )

@@ -8,7 +8,8 @@ export default class StocktwitContainer extends Component {
         }
     }
     render() {
-        const StocktwitRows = (this.props.stocktwit_data) ? this.props.stocktwit_data.map(stock => <StocktwitStockCard stock={stock}/>) : "No Stocktwit Data"
+        const StocktwitRows = (this.props.stocktwit_data) ? this.props.stocktwit_data.map(stock => <StocktwitStockCard stock={stock}/>) : 
+        <tr><th>No Stocktwit Data</th></tr>
         return (
             <div className="row">
                 <canvas className="my-4 chartjs-render-monitor" id="myChart" width="1972" height="832" style={{display: "block", height: "416px", width: "986px"}}></canvas>

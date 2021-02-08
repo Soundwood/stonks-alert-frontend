@@ -2,7 +2,7 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid'
 
 const Header = () => {
-    const link_name_list = ['Reddit', 'Stocktwits', 'Discord', 'All']
+    const link_name_list = ['Reddit', 'Stocktwits', 'Discord', 'All', 'About', 'Inquire']
     const nav_links = link_name_list.map(link_name => (
         <a className="p-2 text-muted" href={`/${link_name}`} key={uuidv4()}>{link_name}</a>
     ))
@@ -10,7 +10,7 @@ const Header = () => {
         <div className="container">
             <header className="blog-header py-3">
                 <div className="row flex-nowrap justify-content-between align-items-center">
-                    <div className="col-4 pt-1"><a className="text-muted" href="#">Subscribe to Alerts</a></div>
+                    <div className="col-4 pt-1"><a className="text-muted" href="#subscribe">Subscribe to Alerts</a></div>
                     <div className="col-4 text-center"><a className="blog-header-logo text-dark" href="#home">Stonks Alert</a></div>
                     <div className="col-4 d-flex justify-content-end align-items-center"></div>
                 </div>

@@ -4,9 +4,9 @@ const StocktwitStockCard = (props) => {
     return (
         <tr>
             <th scope="row">Rank</th>
-            <td>Ticker</td>
-            <td>Name</td>
-            <td>Something Else</td>
+            <th>Ticker</th>
+            <th>Name</th>
+            <th>Something Else</th>
         </tr>
     );
 };
