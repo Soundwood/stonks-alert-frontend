@@ -17,10 +17,11 @@ export default class StocktwitContainer extends Component {
                 <table className="table">
                     <thead>
                         <tr>
+                            <th scope="col">Trend</th>
                             <th scope="col">Rank</th>
                             <th scope="col">Ticker</th>
                             <th scope="col">Listing Name</th>
-                            <th scope="col">skjdhgkkgldk</th>
+                            <th scope="col">Sentiment</th>
                         </tr>
                     </thead>
                     <tbody>
