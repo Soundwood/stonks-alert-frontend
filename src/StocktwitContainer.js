@@ -1,11 +1,23 @@
 import React, { Component } from 'react'
 import StocktwitStockCard from './StocktwitStockCard'
+import * as Constants from './Constants'
 
 export default class StocktwitContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            stocktwits_data: [],
         }
+    }
+    componentDidMount() {
+        // this.getStocktwitsData()
+    }
+    getStocktwitsData = () => {
+        fetch(Constants.STOCKTWITS_DATA_URL)
+        .then(res => res.json())
+        .then(json => {
+            this.setState({stocktwits_data: json.map(stocktwits_data_point => stocktwits_data_point)})
+        })
     }
     render() {
         const StocktwitRows = (this.props.stocktwit_data) ? this.props.stocktwit_data.map(stock => <StocktwitStockCard stock={stock}/>) : 

@@ -1,14 +1,27 @@
 import React, { Component } from 'react'
 import RedditStockCard from './RedditStockCard'
+import * as Constants from './Constants'
+import { v4 as uuidv4 } from 'uuid'
 
 export default class RedditContainer extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            reddit_data: [],
         }
     }
+    componentDidMount() {
+        this.getRedditData()
+    }
+    getRedditData = () => {
+        fetch(Constants.REDDIT_DATA_URL)
+        .then(res => res.json())
+        .then(json => {
+            this.setState({reddit_data: json})
+        })
+    }
     render() {
-        const RedditRows = (this.props.reddit_data) ? this.props.reddit_data.map(stock => <RedditStockCard stock={stock}/>) : 
+        const RedditRows = (this.state.reddit_data.data) ? this.state.reddit_data.data.map(stock => <RedditStockCard stock={stock} key={uuidv4()}/>) : 
             <tr><th>No Reddit Data</th></tr>
         return (
             <div className="row">
