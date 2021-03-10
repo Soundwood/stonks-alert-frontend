@@ -21,8 +21,10 @@ export default class RedditContainer extends Component {
         })
     }
     render() {
-        const RedditRows = (this.state.reddit_data.data) ? this.state.reddit_data.data.map(stock => <RedditStockCard stock={stock} key={uuidv4()}/>) : 
-            <tr><th>No Reddit Data</th></tr>
+        let RedditRows = <tr><th>No Reddit Data</th></tr>
+        if (this.state.reddit_data.data) {
+            RedditRows = this.state.reddit_data.data.map((stock, index) => <RedditStockCard index={index} stock={stock} key={uuidv4()}/>)
+        }
         return (
             <div className="row">
                 <canvas className="my-4 chartjs-render-monitor" id="myChart" width="1972" height="832" style={{display: "block", height: "416px", width: "986px"}}></canvas>
