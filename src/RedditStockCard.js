@@ -3,10 +3,11 @@ import React from 'react';
 const RedditStockCard = (props) => {
     return (
         <tr>
-            <th scope="row">Rank</th>
-            <th>Ticker</th>
-            <th>Name</th>
-            <th>Something Else</th>
+            <th scope="row">Trend</th>
+            <th>Rank</th>
+            <th>{props.stock.attributes.symbol}</th>
+            <th>{props.stock.attributes.name}</th>
+            <th>Sentiment</th>
         </tr>
     );
 };
